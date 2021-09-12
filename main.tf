@@ -1,5 +1,3 @@
-resource "aws_bucket"
-
 resource "aws_s3_bucket" "vault_backend" {
   bucket = "vault_backend"
   acl    = "private"
