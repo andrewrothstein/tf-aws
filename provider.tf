@@ -1,7 +1,7 @@
 provider "aws" {
-  default_tags = {
+  default_tags {
     tags = {
-      "repo" = "tf-aws"
+      "repo" = "github.com/andrewrothstein/tf-aws"
     }
   }
 }
