@@ -5,14 +5,14 @@ resource "aws_s3_bucket" "vault_backend" {
 
 data "aws_iam_policy_document" "vault_backend" {
   statement {
-    actions   = ["s3:*"]
+    actions = ["s3:*"]
     resources = [aws_s3_bucket.vault_backend.arn]
     effect = "Allow"
   }
 }
 
 resource "aws_iam_policy" "vault_backend" {
-  name = "vault_backend_policy"
+  name = "vault_backend"
   description = "IAM policy allowing Vault to leverage an S3 backend"
   policy = data.aws_iam_policy_document.vault_backend.json
 }
