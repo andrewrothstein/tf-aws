@@ -1,11 +1,11 @@
-resource "aws_secrets_manager_secret" "vault_unseal" {
+resource "aws_secretsmanager_secret" "vault_unseal" {
   name = "vault_backend_unseal_key"
 }
 
 data "aws_iam_policy_document" "vault_unseal" {
   statement {
     actions = ["secretsmanager:*"]
-    resources = [aws_secrets_manager_secret.vault_unseal.arn]
+    resources = [aws_secretsmanager_secret.vault_unseal.arn]
     effect = "Allow"
   }
 }
