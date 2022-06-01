@@ -1,5 +1,9 @@
 resource "aws_s3_bucket" "vault_backend" {
   bucket = "vault-backend-vault-nj-drewfus-org"
+}
+
+resource "aws_s3_bucket_acl" "vault_backend" {
+  bucket = aws_s3_bucket.vault_backend.id
   acl    = "private"
 }
 
